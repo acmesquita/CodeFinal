@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Postagens</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+  body {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+
+  /* Carousel base class */
+  .carousel {
+    margin-bottom: 60px;
+  }
+
+  .carousel .container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .carousel-control {
+    background-color: transparent;
+    border: 0;
+    font-size: 120px;
+    margin-top: 0;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  }
+
+  .carousel .item {
+    height: 500px;
+  }
+  .carousel img {   
+    height: 500px;
+  }
+
+  #painel {
+    min-width: 100%;
+    height: 500px; 
+  }
+
+  .carousel-caption {
+    background-color: transparent;
+    position: static;
+    max-width: 550px;
+    padding: 0 120px;
+    margin-bottom: 150px;
+  }
+  .carousel-caption h1,
+  .carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: #333;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  }
+  .carousel-caption .btn {
+    margin-top: 10px;
+  }
+
+
+
+  </style>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+      <!-- Fav and touch icons -->
+      <link rel="shortcut icon" href="ico/favicon.ico">
+
+    </head>
+
+    <body>
+
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Retiro de carnaval JPMU - 2013</a>
+            <div class="nav-collapse collapse">
+              <p class="navbar-text pull-right">
+                Logado como <a href="#" class="navbar-link"> <%=h session[:name_conteudo] %> - </a>
+              </p>
+              <ul class="nav">
+                <li class="active"><a href="#">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+
+      <div id="myCarousel" class="carousel slide">
+
+        <div class="carousel-inner">
+
+          <div class="item active">
+
+            <img id="painel" src="img/carnaval.jpg" alt="">
+
+            <div class="container">
+
+              <div class="carousel-caption">
+
+                <h1>Seja bem vindo!</h1>
+                <p class="lead">Retiro de carnaval de 2013 - Jovens por um mundo unido recriando a cidade. Juntos para compartilhar, conjugar e contemplar.</p>
+                <a class="btn btn-large btn-primary" href="#">Continuar lendo mais a respeito</a>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="container-fluid">
+            <div class="row-fluid">
+              <div class="span9">
+                <div class="hero-unit">
+
+                  <h1>Compartilhe algo com seus amigos!</h1>
+                  <p>A partir daqui você pode compartilhar imagens ou mensagens de texto. 
+                   Para iniciar, faça upload de uma imagem abaixo ou escreva uma mensagem, após clique em compartilhar.</p>
+
+                   <div class="row-fluid">
+                    <div class="hero-unit">
+                      <div class="span 5">
+
+
+                        <form enctype="multipart/form-data" action="/upload" method="post"> 
+
+                          <fieldset>
+                            <legend>Escreva uma mensagem para compartilhar</legend>
+                            <label>Conteúdo</label>
+
+
+                            <textarea rows="5" cols="50" name="mensage"></textarea>
+
+                          </fieldset>
+                          <br>
+                          <br>
+
+                          <fieldset>
+                            <legend>Ou então, selecione uma imagem para compartilhar</legend>
+                            <label>Local da imagem</label>
+                            <br>
+
+                            <input  type="file" class="btn" name="file" id="uploaded_data">
+
+
+
+                            <button type="submit" class="btn btn-primary btn-large &raquo;" value="Upload">Enviar</button>
+
+                            
+
+                          </fieldset>
+
+                          <fieldset>
+                            <legend>P</legend>
+                            <a class="btn btn-large btn-primary" href="/cadastro">Recerregar</a>
+                          </fieldset>  
+
+
+                        </form>
+
+                      </div>
+
+                      <div class="span 5">
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div><!--/span-->
+
+              <div class="span3">
+                <div class="span3 affix" affix-bottom="200">
+                  <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                      <li class="nav-header">Pessoas conectadas</li>
+                      <li><a href="#">Fulano</a></li>
+                      <li><a href="#">Cicrano</a></li>
+                      <li><a href="#">Beutrano</a></li>
+                      <li><a href="#">Outro</a></li>
+                    </ul>
+                  </div><!--/.well -->
+                </div><!--/span-->
+              </div>
+
+            #TUDO DEVE ACONTECER AQUI! RECARREGAR E MOSTRAR!
+
+              <div class="container-fluid">
+                <div class="row-fluid">
+                  <div class="span9">   
+                    <div align="center" class="hero-unit">
+                      <h2 class="featurette-heading">
+
+                        Fulano 
+
+                        <span class="muted">
+
+                          publicou Nome da foto
+                       as 12:50 do dia 06 de Janeiro de 2013
+
+                        </span></h2>
+                       <br>
+
+                       <img src="img/JMU.jpg">
+
+
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+             </div><!--/row-->
+
+             <hr>
+
+             <footer>
+              <p>&copy; Desenvolvedor: Hernandez Giordano B. de S. Oliveira</p>
+              <form method="POST" action"/clear">
+                <input type="submit" class="btn btn-primary btn-large &raquo;" value="Limpar Sessão" />
+              </form>
+            </footer>
+
+          </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+  </body>
+  </html>
